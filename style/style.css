@@ -94,73 +94,47 @@
         ANNIMATION AVATAR 
 =================================== */
 
-.bruno{
+.bruno .laeticia .alex .leandre .kevin .quentin {
     justify-content: center;
     transition: transform .1s;
     color: #2078cf;
 }
-.bruno:hover{
+
+.bruno:hover {
     -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1) ;
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-.laeticia{
-    justify-content: center;
-    transition: transform .1s;
-    color: #2078cf;
-}
-.laeticia:hover{
+.laeticia:hover {
     -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1) ;
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
 
-.alex{
-    justify-content: center;
-    transition: transform .1s;
-    color: #2078cf;
-}
-.alex:hover{
+.alex:hover {
     -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1) ;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.leandre:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
 
-.leandre{
-    justify-content: center;
-    transition: transform .1s;
-    color: #2078cf;
-}
-.leandre:hover{
+.quentin:hover {
     -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1) ;
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-
-.quentin{
-    justify-content: center;
-    transition: transform .1s;
-    color: #2078cf;
-}
-.quentin:hover{
+.kevin:hover {
     -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1) ;
-    transform: scale(1.1);
-}
-
-
-.kevin{
-    justify-content: center;
-    transition: transform .1s;
-    color: #2078cf;
-}
-.kevin:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1) ;
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -168,51 +142,174 @@
 ============================================
 */
 
-.win{
+.win {
     font-family: 'Press Start 2P', cursive;
     color: blue;
+    /*display: none ;*/
 }
 
-.loose{
+.loose {
     font-family: 'Press Start 2P', cursive;
     color: blue;
+    /*display: none ;*/
 }
 
 
 /*
-==================== ANNIMATION PARTIE INDEX
+==================== RULES.HTML
 */
 
-.rules{
-    margin-left: 338px;
-    width: 425px;
-    padding: 15px;
-    margin-top: 25px;
-}
-.body--rules{
+.body__rules{
+    
     margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../image/images_background_rules.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+
 }
-.rules--title{
+
+.logo_rules{
+    
+    margin-top: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    padding:10px;
+    z-index: 1;
+
+}
+
+.rules_text{
+
+    font-size: 14px;
+    margin-top: 40px;
+    color: #FFF;
+    font-size: 24px;
+    border: 1px solid darkgoldenrod;
+
+}
+.for_play{
+
+    margin-top: 150px;
+
+}
+.rules_1{
+
+    margin-top: 70px;
+    color: darkgoldenrod;
+
+}
+.little_title{
+    color: darkgoldenrod;
+}
+
+.rules_spacing{
+    margin-top: 20px;
+}
+
+.ready_for{
+
+margin-top: 40px;
+margin-bottom: 40px;
+
+}
+
+.ready_for_play_rules{
+
+color: darkgoldenrod;
+
+
+}
+
+@media (max-width:460px){
+    .rules_text p{
+        font-size: 16px;
+    }
+
+}
+@media (max-width:360px){
+
+    .logo_rules{
+        width: 75%;
+}
+
+}
+@media (max-width:570px){
+    .body__rules{
+        margin-right: 30px;
+    }
+}
+
+
+/* .backg { 
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+} 
+
+
+.rules {
+
+    width: 25vw;
+    padding: 40px;
+    z-index: 1;
+    text-align: center;
+    display: block;
+
+}
+
+.body--rules {
+
+    margin: 0;
+    margin-left: 12px;
+    position: absolute;
+    top: 25px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.rules--title {
     font-family: 'Teko', sans-serif;
     font-size: 35px;
-}
+} */
+
 /*
 ==================== ANNIMATION PARTIE INDEX
 */
 
 .header--title{
+
     justify-content: center;
     transition: transform .1s;
     color: #2078cf;
+
 }
 .header--title:hover{
+
     -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1) ;
     transform: scale(1.1);
+
 }
 
 .logo--mindavatar{
+
     transition: transform .1s;
+
 }
 .logo--mindavatar:hover{
     -ms-transform: scale(1.1);
