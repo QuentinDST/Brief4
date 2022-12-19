@@ -1,17 +1,16 @@
 (function () {
+    'use strict';
 
-    var code = [], // COMBINAISON QUE LE JOUEUR DOIT DEVINER
-        guess = [], // 4 AVATARS QUE LE JOUEUR DOIT DEVINER
-        choices = document.getElementsByClassName('choice'),
+    var code = [], // COMBINAISON SECRETE QUE LE JOUEUR DOIT DEVINER
+        guess = [], // AVATAR QUE LE JOUEUR DOIT GLISSER POUR DEVINER LA COMBINAISON
+        options = document.getElementsByClassName('choice'),
         inputRows = document.getElementsByClassName('guess'),
         hintContainer = document.getElementsByClassName('hint'),
         secretSockets = document.getElementsByClassName('secret case'),
-        modalMessage = document.getElementById('modalMessage'),
         rowIncrement = 1,
         hintIncrement = 1,
-        score = 0, 
         avatars = {
-            1: 'Alex',
+            1: 'alex',
             2: 'kevin',
             3: 'laeticia',
             4: 'bruno',
@@ -19,12 +18,13 @@
             6: 'leandre'
         };
 
+
     function gameSetup() {
         generateSecretCode(1, 7);
 
         // AJOUTER UN ADDEVENTLISTENER SUR TOUS LES BOUTONS
-        for (var i = 0; i < choices.length; i++)
-            choices[i].addEventListener('click', insertGuess, false);
+        for (var i = 0; i < options.length; i++)
+            options[i].addEventListener('click', insertGuess, false);
 
         document.getElementById('newGame').onclick = newGame;
         document.getElementById('delete').onclick = deleteLast;
@@ -36,24 +36,24 @@
         var self = this;
         var slots = inputRows[inputRows.length - rowIncrement].getElementsByClassName('case');
 
-        slots[guess.length].className = slots[guess.length].className + ' avatar ' + self.id; // Insert node into page
+        slots[guess.length].className = slots[guess.length].className + ' peg ' + self.id; // Insert node into page
 
         guess.push(+(self.value));
 
-        if (guess.length === 4) { //
+        if (guess.length === 4) {
             if (compare())
-                gameState('won');
+                revealCode('won');
             else
                 rowIncrement += 1;
         }
 
         if (rowIncrement === inputRows.length + 1 && !compare())
-            gameState('lost');
+            revealCode('lost');
     }
 
     function compare() {
-        var isMatch = true; //VARIABLE QUI VERIFIE SI LA CONDITION EST VRAIE OU FAUSSE
-        var codeCopy = code.slice(0); // VARIALE QUI PARCOURS LA COMBINAISON SECRETE ET LA COMPARE
+        var isMatch = true;  //VARIABLE QUI VERIFIE SI LA CONDITION EST VRAIE OU FAUSSE
+        var codeCopy = code.slice(0);  // VARIALE QUI PARCOURS LA COMBINAISON SECRETE ET LA COMPARE
 
         // PREMIEREMENT VERIFIER SI CHAQUE AVATAR EST PRESENT DANS LA ROW ET A LA BONNE PLACE
         for (var i = 0; i < code.length; i++) {
@@ -66,6 +66,7 @@
         }
 
         // PUIS VERIFIER SI CHAQUE AVATAR EST PRESENT DANS LA ROW MAIS PAS A LA BONNE PLACE
+
         for (var j = 0; j < code.length; j++) {
             if (codeCopy.indexOf(guess[j]) !== -1) {
                 insertPeg('almost');
@@ -73,42 +74,44 @@
             }
         }
 
-        hintIncrement += 1; // PREPARER ET INITIALISER LA ROW SUIVANTE
-        guess = []; // RESET PLATEAU DE JEU
+        hintIncrement += 1;  // PREPARER ET INITIALISER LA ROW SUIVANTE
+        guess = [];         // RESET PLATEAU DE JEU
 
         return isMatch;
     }
 
     function insertPeg(type) {
         var sockets = hintContainer[hintContainer.length - hintIncrement].getElementsByClassName('hint--case');
-        sockets[0].className = 'case' + type;
+        sockets[0].className = 'case ' + type;
     }
 
     function deleteLast() {
         if (guess.length !== 0) {
             var slots = inputRows[inputRows.length - rowIncrement].getElementsByClassName('case');
-            slots[guess.length - 1].className = 'case'; // Insert node into page
+            slots[guess.length - 1].className = 'case ';
             guess.pop();
         }
     }
 
-/*****  FONCTION NOUVEAU JEU  *****/
+    /*****  FONCTION NOUVEAU JEU  *****/
 
     function newGame() {
-        guess = []; // RESET PLATEAU DE JEU
+        guess = [];       // RESET PLATEAU DE JEU
         clearBoard();
-        rowIncrement = 1; // REMETTRE A 0 LA PREMIERE LIGNE DU PLATEAU DE JEU
-        hintIncrement = 1; // REMETTRE A 0 LA LIGNE DES INDICES// 
-        gameSetup();
+        clearBoard();
+        rowIncrement = 1;  // REMETTRE A 0 LA PREMIERE LIGNE DU PLATEAU DE JEU
+        hintIncrement = 1; // REMETTRE A 0 LA LIGNE DES INDICES//
     }
-    
+
+
     function generateSecretCode(min, max) {
         for (var i = 0; i < 4; i++)
             code[i] = Math.floor(Math.random() * (max - min)) + min;
+        console.log(code);
     }
 
     function clearBoard() {
-        // NETTOYER TABLEAU CASES AVATAR A DEVINER
+        // Clear the guess sockets
         for (var i = 0; i < inputRows.length; i++) {
             inputRows[i].innerHTML = '';
             for (var j = 0; j < 4; j++) {
@@ -118,7 +121,7 @@
             }
         }
 
-        // NETTOYER CASES INDICES
+        // Clear the hint sockets
         for (var i = 0; i < hintContainer.length; i++) {
             var socketCollection = hintContainer[i].getElementsByClassName('case');
             for (var j = 0; j < 4; j++) {
@@ -126,14 +129,16 @@
             }
         }
 
-        // REMETTRE A ZERO LA COMBINAISON A DEVINER
+        // Reset secret code sockets
         for (var i = 0; i < secretSockets.length; i++) {
             secretSockets[i].className = 'secret case';
             secretSockets[i].innerHTML = '?';
         }
+
+        document.getElementsByTagName('body')[0].className = ''; // Reset background
     }
 
-    // Once the player runs out of guesses or crack the code - the sequence is revealed
+    // QUAND LE JOUEUR TROUVE LA BONNE COMBINAISON, LA COMBINAISON EST REVELEE
     function revealCode() {
         for (var i = 0; i < secretSockets.length; i++) {
             secretSockets[i].className += ' ' + avatars[code[i]];
@@ -142,7 +147,7 @@
     }
 
     function gameOver() {
-        // Disable color options
+        // DESACTIVE LE CHOIX DES AVATARS
         for (var i = 0; i < choices.length; i++)
             choices[i].removeEventListener('click', insertGuess, false);
         revealCode();
@@ -150,3 +155,4 @@
 
     gameSetup(); // LANCER LE JEU
 }());
+

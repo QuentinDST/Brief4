@@ -30,30 +30,150 @@ h1 {
  
 .header--logo{
   border-radius: 50%;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
+}
+
+.logo--mindavatar{
+    border-radius: 50%;
 }
  
 .header--button{
   font-family: 'Press Start 2P', cursive;
   color: white;
   padding: 15px 40px;
-  background-color: #3375B6;
   font-size: 25px;
   border-radius: 10px;
   border: none;
 }
  
+
+/* Page Game */
+
+.body__rules{
+    
+  margin-top: 50px;
+  margin-left: 150px;
+  flex-direction: column;
+  background-repeat: no-repeat ;
+  background-size: cover;
+
+}
+
+.logo_rules{
+
+  margin-top: 50px;
+  width: 300px;
+  z-index: 1;
+
+}
+
+.text--rules-tout{
+  padding: 20px;
+  color: #2078cf;
+  font-size: 19px;
+  font-family: 'Unbounded', cursive;
+
+}
+
+.rules-1 {
+  margin-top: 15px;
+}
+.ordi {
+  color: black;
+}
+
+.rules_text{
+  
+  font-family: 'Unbounded', cursive;
+  color: #2078cf;
+  padding: 25px;
+  margin-top: 40px;
+  margin: 35px;
+  border: 1px solid darkgoldenrod;
+  border-radius: 1em;
+
+}
+.for_play{
+
+font-family: 'Fredoka One', cursive;
+
+}
+.rules_1{
+
+  font-family: 'Fredoka One', cursive;
+  margin-top: 70px;
+  color: darkgoldenrod;
+  font-size: 24px;
+
+}
+.little_title{
+
+  font-size: 24px;
+  font-family: 'Fredoka One', cursive;
+  color: darkgoldenrod;
+}
+
+.rules_spacing{
+
+  margin-top: 20px;
+}
+
+.ready_for{
+
+margin-top: 40px;
+margin-bottom: 40px;
+
+}
+
+.ready_for_play_rules{
+
+color: darkgoldenrod;
+
+
+}
+
+@media (max-width:460px){
+  .rules_text p{
+      font-size: 16px;
+  }
+
+}
+@media (max-width:360px){
+
+  .logo_rules{
+      width: 75%;
+}
+
+}
+@media (max-width:570px){
+  .body__rules{
+      margin-right: 30px;
+  }
+}
+
+
+
+
+/* TIMER */
+
+#timer {
+  font-weight: bold;
+  font-size:  4em;
+}
+
+
+
+
 /* BOARD GAME */
  
 .container {
   display: block;
-  width: 700px;
+  width: 900px;
   margin: 0 auto;
 }
  
 .container {
-  width: 400px;
-  margin: auto;
+  width: 450px;
   margin-top: 50px;
 }
  
@@ -112,6 +232,7 @@ h1 {
   margin-left: 30px;
   border-radius: 15px;
   background-color: #9c9c9c;
+  
 }
  
 .hint {
@@ -140,7 +261,7 @@ h1 {
 }
  
 .almost {
-  background-color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
 }
  
  
@@ -166,7 +287,7 @@ h1 {
   font-size: 21px;
   background-color: #ffffff;
   border-radius: 50%;
-  border: solid 1px grey;
+  border: solid 1px rgb(221, 14, 14);
 }
  
 /************* AVATARS *************/
@@ -302,7 +423,7 @@ h1 {
   }
   
   .sidebar{
-    margin: 15;
+    margin: 15px;
     justify-content: center;
     margin-top: 45px;
     height:45px;
@@ -347,10 +468,9 @@ h1 {
     border: 2px solid #3375B6;
   }
   
-  .resultat--score {
+  .resultat--score a {
     color: #3375B6;
     text-decoration: none;
-    justify-content: flex-start; 
 }
   
   #time {
@@ -371,19 +491,23 @@ h1 {
   /* Buttons */
   
   .button-restart{
-    width: 70px;
-    border: 2px solid #3375B6;
     font-family: 'Press Start 2P', cursive;
-    width:110px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 5px 5px;
+    margin: 5px;
     left:17px;
     bottom:38px;
     line-height:20px;
     font-size:18px;
     text-decoration:none;
-    text-align:center;
-    color:#3375B6;
     border-radius:8px;
+    background-color: rgb(248, 248, 248);
+    border: 2px solid #3375B6;
+  }
+
+  .button-restart a {
+    color: #3375B6;
+    text-decoration: none;
+    justify-content: flex-start;
   }
 
   .button-restart:hover{
@@ -442,6 +566,36 @@ h1 {
     transform: scale(1.1);
 }
 
+.header--button--index1{
+    transition: transform .1s;
+}
+
+.header--button--index1:hover{
+    -ms-transform: scale(1.);
+    -webkit-transform: scale(1.2) ;
+    transform: scale(1.2);
+}
+
+.header--button--index2{
+    transition: transform .1s;
+}
+
+.header--button--index2:hover{
+    -ms-transform: scale(1.);
+    -webkit-transform: scale(1.2) ;
+    transform: scale(1.2);
+}
+
+.header--button--index3{
+    transition: transform .1s;
+}
+
+.header--button--index3:hover{
+    -ms-transform: scale(1.);
+    -webkit-transform: scale(1.2) ;
+    transform: scale(1.2);
+}
+
 .header--button{
     transition: transform .1s;
 }
@@ -453,18 +607,85 @@ h1 {
 }
 
 
-.header--button--index{
+.header--button--index1{
     font-family: 'Press Start 2P', cursive;
     height: 35px;
     width: 150px;
     border-radius: 0.5em;
     background-color: #3375b6;
     border-style: none;
-    margin-left: 30px;
+    margin: 15px;
 }
 
-.header--button--index a{
+.header--button--index1 a{
     color: #FFF;
     text-decoration: none ;
+    margin: 15px;
+}
+
+.header--button--index2{
+    font-family: 'Press Start 2P', cursive;
+    height: 35px;
+    width: 150px;
+    border-radius: 0.5em;
+    background-color: #3375b6;
+    border-style: none;
+    margin: 15px;
+}
+
+.header--button--index2 a{
+    color: #FFF;
+    text-decoration: none ;
+    margin: 15px;
+}
+
+.header--button--index3{
+    font-family: 'Press Start 2P', cursive;
+    height: 35px;
+    width: 150px;
+    border-radius: 0.5em;
+    background-color: #3375b6;
+    border-style: none;
+    margin: 15px;
+}
+
+.header--button--index3 a{
+    color: #FFF;
+    text-decoration: none ;
+    margin: 15px;
+}
+
+
+.score{
+    justify-content: center;
+    transition: transform .1s;
+    color: #2078cf;
+}
+.score:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1) ;
+    transform: scale(1.1);
+}
+
+.resultat--score{
+    justify-content: center;
+    transition: transform .1s;
+    color: #2078cf;
+}
+.resultat--score:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1) ;
+    transform: scale(1.1);
+}
+
+.button-restart{
+    justify-content: center;
+    transition: transform .1s;
+    color: #2078cf;
+}
+.button-restart:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1) ;
+    transform: scale(1.1);
 }
 
