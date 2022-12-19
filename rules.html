@@ -1,33 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.html">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="/style/style.css">
-      
+
     <title>RULES - MIND' AVATAR</title>
 </head>
-<body>
 
-    <div class="container">
-        <img class="rules" src="/image/image_rules.jpg" class="card-img-top" alt="rules">
-        <div class="row">
-            <div class="body--rules">
-                <div class="card mb-3">
+<body class="body__rules">
+
+            <img class="logo_rules" src="/image/image_rules.jpg" alt="imagerules">
+
+      
+            <div class="rules_text">
+                <p>
+                    Le but du Mind' Avatar est de gagner un maximum de manches. Le joueur qui doit trouver la
+                    combinaison secrète gagne une manche dès lors qu'il y parvient en maximum 8 coups. Notre programme concoit la combinaison secrète remporte la manche quand le joueur n'est pas
+                    parvenu a trouvé la combinaison en 8 coups.
+                </p>
+            </div>
+
+          
+
+            <div class="text--rules-tout">
+                  <div class="for_play">
+                <h3 class="rules_1">
+                    Pour jouer au Mind'Avatar, il vous faut :
+                </h3>
+                <ul>
+                    <li>Le plateau de mastermind</li>
+                    <li>Les pions de 4 couleurs diffèrentes</li>
+                    <li>être 2 joueurs</li>
+                </ul>
+                <div class="card">
                     <div class="card-body">
-                        <h5 class="rules--title text-center animate__animated animate__backInDown">RULES</h5>
-                    <div class="animate__animated animate__bounceInUp animate__delay-1s">
-                        <p class="card-text">Le but du <strong>MasterMind</strong> est de gagner un maximum de manches <strong>( trouver la combinaison pour gagner ) .</strong> Le joueur qui doit trouver la combinaison secrète gagne une manche dès lors qu'il y parvient en maximum <strong>12 coups.</strong> Le joueur qui a conçu la combinaison secrète remporte la manche quand son adversaire n'est pas parvenu a trouvé la combinaison en <strong> 12 coups</strong></p>
+                        <p> <span class="ordi">En tout cas c'est ce qu'il faudrait en vrais, mais nous avons faite une replique du ce jeux sur ordinateur plus simplifier !</span></p>
                     </div>
-                    </div>
+                  </div>
+                
+            </div>
+            
+                <h3 class="rules_1">
+                    Comment gagner au Mind' Avatar : 
+                </h3>
+                <p class="rules_spacing">
+                    Pour commencer, il vous faut décider entre vous et votre adversaire lequel élabore la combinaison secrète. Une fois cela fait, celui-ci doit se mettre du côté de l’extrémité rotative du plateau de Mastermind. Face à lui se met le joueur qui doit deviner.
+                    Mettez-vous d’accord sur le nombre de manche que vous souhaitez disputer afin de vous assurez d’un gagnant.
+                    Le joueur situé à l’extrémité rotative élabore alors sa combinaison de couleur sans bien entendu la dévoiler à l’autre joueur. Le second peut alors commencer à faire des propositions de combinaisons.
+                    Pour cela il doit insérer 4 pions dans la première ligne située la plus près de lui.
+                    <br>
+                    <br>
+                    <h5 class="little_title">Si la combinaison présentée est incorrecte :</h5>
+                    <br>
+                    <br>
+                    Le joueur qui a élaboré la combinaison secrète utilise les languettes situé sur les côtés du plateau.
+                    Si dans la proposition, un ou plusieurs pions de couleurs sont bien dans la combinaison mais pas à la bonne place, le joueur doit alors tirer la languette blanche selon le nombre.
+                    Si dans la proposition, un ou plusieurs pions de couleurs sont bien dans la combinaison et à la bonne place, le joueur doit alors tirer la languette rouge selon le nombre.
+                    Le joueur devant deviner la combinaison continue ainsi en proposant sur la seconde ligne une autre proposition, en prenant bien entendu en compte les indications des languettes rouges et blanches. Il a droit a 12 propositions pour déchiffrer le code.
+                    <br>
+                    <br>
+                    <h5 class="little_title">Si la combinaison est correcte :</h5>
+                    <br>
+                    <br>
+                    Le joueur qui a élaboré la combinaison secrète révèle le code et la manche est terminée. Les rôles sont alors inversés et la seconde manche peut ainsi commencer.
+                </p>
+
+                <h3 class="rules_1">
+                    Astuces pour déchiffrer la combinaison secrète du Mind' Avtar :
+                </h3>
+                <p class="rules_spacing">
+                    Si vous approchez de la fin de partie et que vous n’avez toujours pas déchiffrer la combinaison secrète de votre adversaire, il est judicieux de comparer les lignes sur lesquels vous avez fait les meilleurs scores.
+                    Les lignes n’ayant zéro couleurs trouvés peuvent également être utile pour éliminer définitivement des couleurs.
+                </p>
+            </div>
+            <div class="ready_for">
+                <div class="ready_for_play text-center">
+                    <a class="btn btn-outline-warning" href="game.html" role="button">Ready For Play</a>
                 </div>
             </div>
         </div>
-    </div>
-    
+
 </body>
+
 </html>
